@@ -1,7 +1,7 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
-   } */
+   }
 
 #square{
     width: 43em;
@@ -14,7 +14,6 @@
 #zero, #one, #two, #three, #four, #five, #six, #seven, #eight{
     width: 14em;
     height: 14em;
-    /* background-color: gold; */
     display: inline-block;
 
 }
@@ -31,11 +30,16 @@
     margin: 0px;
 }
 
+#three{
+    margin-bottom: -0.05%;
+}
+
 #one, #four{
     border-bottom-width: 2px;
     border-bottom-style: groove;
-    border-bottom-color: black;
-    margin: 0px;
+    border-bottom-color: rgb(5, 3, 3);
+    margin-left: -0.5%;
+    margin-bottom: -0.05%;
 }
 #two, #five{
     border-bottom-width: 2px;
@@ -44,8 +48,9 @@
     border-left-width: 2px;
     border-left-style: groove;
     border-left-color: black;
-    margin: 0px;
+    margin-left: -0.55%;
 }
+
 #seven{
     border-left-width: 2px;
     border-left-style: groove;
@@ -53,5 +58,5 @@
     border-right-width: 2px;
     border-right-style: groove;
     border-right-color: black;
-    margin: 0px;
+    margin-left: -0.55%;
 }
