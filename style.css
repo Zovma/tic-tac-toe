@@ -60,3 +60,8 @@
     border-right-color: black;
     margin-left: -0.55%;
 }
+
+.win{
+    border-style: dashed;
+    border-color: red;
+}

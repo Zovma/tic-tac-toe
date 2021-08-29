@@ -1,6 +1,7 @@
 let zero = 0
 let array0 = []
 let arrayX = []
+let counter = 0
 
 let arrayWin = ["one", "two", "zero"]
 let arrayWin1 = ["five", "four", "three"]
@@ -25,20 +26,19 @@ let generalArrayWin = [
 ]
 
 square.addEventListener('click', check)
-let counter = 0
+
 function check(e) {
-    // console.log(e);
-    // console.log(e.path[0].attributes[0].nodeValue);
     let click = e.path[0]
 
     if (click.nodeName === 'DIV') {
         if (counter % 2 == 0) {
             nol1(click)
             let param = e.path[0].attributes[0].nodeValue
+            console.log(param);
             array0.push(param)
-            array0.sort()
-            counter++
             let example = []
+            let example2 =[]
+            counterFnc()
 
             for (let i = 0; i < generalArrayWin.length; i++) {
 
@@ -46,38 +46,52 @@ function check(e) {
 
                 for (let z = 0; z < generalArrayWin[i].length; z++) {
                     example.push(array0.includes(generalArrayWin[i][z], 0))
+                    example2.push(generalArrayWin[i][z])
                 }
+
+
                 if (example.join() == ('true,true,true')) {
+                    win(example2)
+                    console.log(example2);
+                    console.log(example.join());
                     console.log('Совпадение найдено, Победа нулей')
                 }
-                console.log(example)
+                // console.log(example)
                 example = []
-            }
+                example2 = []
 
+            }
 
         }
         else {
             cross1(click)
             let param = e.path[0].attributes[0].nodeValue
+            console.log(param);
             arrayX.push(param)
-            arrayX.sort()
-
-            counter++
             let example = []
+            let example2 = []
+            counterFnc()
 
             for (let i = 0; i < generalArrayWin.length; i++) {
 
 
 
                 for (let z = 0; z < generalArrayWin[i].length; z++) {
-                    example.push(array0.includes(generalArrayWin[i][z], 0))
+                    example.push(arrayX.includes(generalArrayWin[i][z], 0))
+                    example2.push(generalArrayWin[i][z])
                 }
+
                 if (example.join() == ('true,true,true')) {
+                    win(example2)
+                    console.log(example2);
+                    console.log(example.join());
                     console.log('Совпадение найдено, Победа Крестов')
                 }
-                console.log(example)
+                // console.log(example)
                 example = []
+                example2 = []
             }
+
         }
     }
     else {
@@ -108,17 +122,15 @@ function cross1(e) {
     elem.appendChild(cross)
 }
 
-let example = 0
-switch (array0) {
+function counterFnc() {
+    counter++
+    if (counter == 9) {
+        console.log("Ничья, игра закончена");
+    }
+}
 
-    case ["one", "two", "zero"]:
-        console.log("выйграли Нолики");
-        break;
-    case 200:
-        console.log("Доход равен 200");
-        break;
-    case 300:
-        console.log("Доход равен 300");
-        break;
+function win(param) {
+    for(let i = 0; i < param.length; i++)
+    document.getElementById(param[i]).className = "win"
 }
 
