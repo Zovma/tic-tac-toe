@@ -1,36 +1,95 @@
 * {
     margin: 0;
     padding: 0;
-   }
+}
 
-#square{
-    width: 43em;
-    height: 43em;
+#winX{
+    position: absolute;
+    top: 2em;
+    right: 6em;
+}
+
+#winO{
+    position: absolute;
+    left: 6em;
+    top: 2em;
+}
+
+
+#square {
+    width: 44em;
+    height: 44em;
     /* border-style: solid; */
     margin-left: auto;
     margin-right: auto;
     /* display: block; */
 }
-#zero, #one, #two, #three, #four, #five, #six, #seven, #eight{
+
+#zero, #one, #two, #three, #four, #five, #six, #seven, #eight {
     width: 14em;
     height: 14em;
     display: inline-block;
-
+    /* border: 2px solid black;
+    margin: 0px;
+    padding: 0px; */
 }
 
-#zero, #three{
+
+    #zero {
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    #one {
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    #two {
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    #three {
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    #four {
+        border: 2px solid black;
+    }
+    #five {
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    #six {
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+    }
+    #seven {
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+    }
+    #eight {
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+    }
+
+
+/* #zero, #three{
     border-bottom-width: 2px;
     border-bottom-style: groove;
     border-bottom-color: black;
     border-right-width: 2px;
     border-right-style: groove;
     border-right-color: black;
-    border-top-width: 0px;
+    /* border-top-width: 0px;
     border-left-width: 0px;
-    margin: 0px;
-}
+    margin: 0px; */
 
-#three{
+/* } */
+
+/* #three{
     margin-bottom: -0.05%;
 }
 
@@ -59,9 +118,4 @@
     border-right-style: groove;
     border-right-color: black;
     margin-left: -0.55%;
-}
-
-.win{
-    border-style: dashed;
-    border-color: red;
-}
+} */

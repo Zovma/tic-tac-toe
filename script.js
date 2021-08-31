@@ -1,7 +1,9 @@
-let zero = 0
 let array0 = []
 let arrayX = []
 let counter = 0
+
+let winO = 0
+let winX = 0
 
 let arrayWin = ["one", "two", "zero"]
 let arrayWin1 = ["five", "four", "three"]
@@ -26,6 +28,7 @@ let generalArrayWin = [
 ]
 
 square.addEventListener('click', check)
+btn.addEventListener('click', nextGame)
 
 function check(e) {
     let click = e.path[0]
@@ -37,7 +40,7 @@ function check(e) {
             console.log(param);
             array0.push(param)
             let example = []
-            let example2 =[]
+            let example2 = []
             counterFnc()
 
             for (let i = 0; i < generalArrayWin.length; i++) {
@@ -51,10 +54,16 @@ function check(e) {
 
 
                 if (example.join() == ('true,true,true')) {
-                    win(example2)
+                    redBorder(example2)
+                    winO++
+                    document.getElementById('winO').childNodes[3].innerHTML = winO
+                    document.getElementById('winO').childNodes[5].innerHTML = 'Победа нулей!'
+
+                    // document.getElementById('winO').childNodes[5].innerHTML = 'Победа нулей!'
                     console.log(example2);
                     console.log(example.join());
                     console.log('Совпадение найдено, Победа нулей')
+                    square.removeEventListener('click', check)
                 }
                 // console.log(example)
                 example = []
@@ -82,10 +91,14 @@ function check(e) {
                 }
 
                 if (example.join() == ('true,true,true')) {
-                    win(example2)
+                    winX++
+                    document.getElementById('winX').childNodes[3].innerHTML = winX
+                    document.getElementById('winX').childNodes[5].innerHTML = 'Победа крестов!'
+                    redBorder(example2)
                     console.log(example2);
                     console.log(example.join());
                     console.log('Совпадение найдено, Победа Крестов')
+                    square.removeEventListener('click', check)
                 }
                 // console.log(example)
                 example = []
@@ -126,11 +139,70 @@ function counterFnc() {
     counter++
     if (counter == 9) {
         console.log("Ничья, игра закончена");
+        alert('Ничья, игра закончена')
     }
 }
 
-function win(param) {
-    for(let i = 0; i < param.length; i++)
-    document.getElementById(param[i]).className = "win"
+function redBorder(param) {
+    for (let i = 0; i < param.length; i++)
+        document.getElementById(param[i]).style.border = "2px solid red"
 }
 
+function nextGame() {
+    let arrayWithAllId = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+    for (let i = 0; i < arrayWithAllId.length; i++) {
+        document.getElementById(arrayWithAllId[i]).innerHTML = ''
+    }
+    document.getElementById('zero').style.borderRight = '2px solid black'
+    document.getElementById('zero').style.borderLeft = ''
+    document.getElementById('zero').style.borderTop = ''
+    document.getElementById('zero').style.borderBottom = '2px solid black'
+
+    document.getElementById('one').style.borderBottom = '2px solid black'
+    document.getElementById('one').style.borderTop = ''
+    document.getElementById('one').style.borderLeft = '2px solid black'
+    document.getElementById('one').style.borderRight = '2px solid black'
+
+    document.getElementById('two').style.borderRight = ''
+    document.getElementById('two').style.borderLeft = '2px solid black'
+    document.getElementById('two').style.borderBottom = '2px solid black'
+    document.getElementById('two').style.borderTop = ''
+
+    document.getElementById('three').style.borderTop = '2px solid black'
+    document.getElementById('three').style.borderBottom = '2px solid black'
+    document.getElementById('three').style.borderRight = '2px solid black'
+    document.getElementById('three').style.borderLeft = ''
+
+    document.getElementById('four').style.border = '2px solid black'
+
+    document.getElementById('five').style.borderLeft = '2px solid black'
+    document.getElementById('five').style.borderTop = '2px solid black'
+    document.getElementById('five').style.borderBottom = '2px solid black'
+    document.getElementById('five').style.borderLeft = ''
+
+    document.getElementById('six').style.borderLeft = ''
+    document.getElementById('six').style.borderBottom = ''
+    document.getElementById('six').style.borderTop = '2px solid black'
+    document.getElementById('six').style.borderRight = '2px solid black'
+
+    document.getElementById('seven').style.borderRight = '2px solid black'
+    document.getElementById('seven').style.borderLeft = '2px solid black'
+    document.getElementById('seven').style.borderTop = '2px solid black'
+    document.getElementById('seven').style.borderBottom = ''
+
+    document.getElementById('eight').style.borderBottom = ''
+    document.getElementById('eight').style.borderRight = ''
+    document.getElementById('eight').style.borderLeft = '2px solid black'
+    document.getElementById('eight').style.borderTop = '2px solid black'
+
+    document.getElementById('winO').childNodes[5].innerHTML = ''
+    document.getElementById('winX').childNodes[5].innerHTML = ''
+
+    array0 = []
+    arrayX = []
+    counter = 0
+
+    square.addEventListener('click', check)
+
+    console.log('nextGame');
+}
