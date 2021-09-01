@@ -59,13 +59,13 @@ function check(e) {
                     document.getElementById('winO').childNodes[3].innerHTML = winO
                     document.getElementById('winO').childNodes[5].innerHTML = 'Победа нулей!'
 
-                    // document.getElementById('winO').childNodes[5].innerHTML = 'Победа нулей!'
+
                     console.log(example2);
                     console.log(example.join());
                     console.log('Совпадение найдено, Победа нулей')
                     square.removeEventListener('click', check)
                 }
-                // console.log(example)
+
                 example = []
                 example2 = []
 
@@ -100,7 +100,7 @@ function check(e) {
                     console.log('Совпадение найдено, Победа Крестов')
                     square.removeEventListener('click', check)
                 }
-                // console.log(example)
+
                 example = []
                 example2 = []
             }
