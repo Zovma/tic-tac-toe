@@ -1,6 +1,7 @@
 let array0 = []
 let arrayX = []
 let counter = 0
+let redBord = 0
 
 let winO = 0
 let winX = 0
@@ -41,7 +42,7 @@ function check(e) {
             array0.push(param)
             let example = []
             let example2 = []
-            counterFnc()
+            
 
             for (let i = 0; i < generalArrayWin.length; i++) {
 
@@ -58,6 +59,7 @@ function check(e) {
                     winO++
                     document.getElementById('winO').childNodes[3].innerHTML = winO
                     document.getElementById('winO').childNodes[5].innerHTML = 'Победа нулей!'
+                    redBord = 1
 
 
                     console.log(example2);
@@ -70,6 +72,7 @@ function check(e) {
                 example2 = []
 
             }
+            counterFnc()
 
         }
         else {
@@ -94,6 +97,7 @@ function check(e) {
                     winX++
                     document.getElementById('winX').childNodes[3].innerHTML = winX
                     document.getElementById('winX').childNodes[5].innerHTML = 'Победа крестов!'
+                    redBord = 1
                     redBorder(example2)
                     console.log(example2);
                     console.log(example.join());
@@ -137,9 +141,8 @@ function cross1(e) {
 
 function counterFnc() {
     counter++
-    if (counter == 9) {
-        console.log("Ничья, игра закончена");
-        alert('Ничья, игра закончена')
+    if (counter == 9 && redBord === 0) {
+        document.getElementById('draw').innerHTML = 'Ничья!'
     }
 }
 
@@ -198,9 +201,14 @@ function nextGame() {
     document.getElementById('winO').childNodes[5].innerHTML = ''
     document.getElementById('winX').childNodes[5].innerHTML = ''
 
+    document.getElementById('draw').innerHTML = ''
+
+
+
     array0 = []
     arrayX = []
     counter = 0
+    redBord = 0
 
     square.addEventListener('click', check)
 
