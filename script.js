@@ -117,8 +117,8 @@ function check(e) {
 function nol1(e) {
     let elem = e
     let nol = document.createElement('IMG')
-    nol.style.width = '14em'
-    nol.style.height = '14em'
+    nol.style.width = '10em'
+    nol.style.height = '10em'
     nol.src = './img/nol.png'
     elem.appendChild(nol);
 
@@ -129,8 +129,8 @@ function nol1(e) {
 function cross1(e) {
     let elem = e
     let cross = document.createElement('IMG')
-    cross.style.width = '14em'
-    cross.style.height = '14em'
+    cross.style.width = '10em'
+    cross.style.height = '10em'
     cross.src = './img/krest.png'
     elem.appendChild(cross)
 }
@@ -178,7 +178,7 @@ function nextGame() {
     document.getElementById('five').style.borderLeft = '2px solid black'
     document.getElementById('five').style.borderTop = '2px solid black'
     document.getElementById('five').style.borderBottom = '2px solid black'
-    document.getElementById('five').style.borderLeft = ''
+    document.getElementById('five').style.borderRight = ''
 
     document.getElementById('six').style.borderLeft = ''
     document.getElementById('six').style.borderBottom = ''

@@ -2,79 +2,95 @@
     margin: 0;
     padding: 0;
 }
-
-#winX{
-    position: absolute;
-    top: 2em;
-    right: 6em;
-}
-
-#winO{
-    position: absolute;
-    left: 6em;
-    top: 2em;
-}
-
-
-#square {
-    width: 44em;
-    height: 44em;
-    /* border-style: solid; */
+#main{
     margin-left: auto;
     margin-right: auto;
-    /* display: block; */
+    width: 32em;
+    height: 36em;
+}
+
+#winX {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
+    float: right;
+}
+
+#winO {
+    width: 10em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+}
+
+#btn{
+    width: 10em;
+}
+
+#square {
+    margin-top: 2em;
+    margin-left: 2em;
+    width: 32em;
+    height: 32em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #zero, #one, #two, #three, #four, #five, #six, #seven, #eight {
-    width: 14em;
-    height: 14em;
+    width: 10em;
+    height: 10em;
     display: inline-block;
-    /* border: 2px solid black;
-    margin: 0px;
-    padding: 0px; */
 }
 
+#zero {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
 
-    #zero {
-        border-right: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-    #one {
-        border-left: 2px solid black;
-        border-right: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-    #two {
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-    #three {
-        border-top: 2px solid black;
-        border-right: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-    #four {
-        border: 2px solid black;
-    }
-    #five {
-        border-top: 2px solid black;
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-    #six {
-        border-top: 2px solid black;
-        border-right: 2px solid black;
-    }
-    #seven {
-        border-left: 2px solid black;
-        border-top: 2px solid black;
-        border-right: 2px solid black;
-    }
-    #eight {
-        border-left: 2px solid black;
-        border-top: 2px solid black;
-    }
+#one {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
 
+#two {
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#three {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#four {
+    border: 2px solid black;
+}
+
+#five {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#six {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#seven {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#eight {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+}
 
 /* #zero, #three{
     border-bottom-width: 2px;
